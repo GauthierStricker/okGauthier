@@ -1,0 +1,163 @@
+<header>
+<nav class="navbar blue">
+  <ul class="left">
+    <li><%= image_tag "ios_google_icon.png", class: "logo" %></li>
+  </ul>
+  <ul class="right">
+    <li><%= image_tag "profil.jpeg", class: "avatar" %></li>
+  </ul>
+  <div class="center">Projet expérimental de candidature chez Google</div>
+</nav>
+</header>
+<main>
+<div class="secondary-container">
+  <h3 class="product-sans">À votre service.<br>Découvrez ma candidature.</h3>
+</div>
+<div class="secondary-container">
+  <a class="btn-floating btn-small waves-effect waves-light yellow previous disabled"><i class="material-icons">navigate_before</i></a>
+	<div class="card card-question" style="width: 36rem;">
+	    <blockquote>
+      <h5>
+      	<i class="material-icons">format_quote</i>
+      	<br>
+      	<div class="current-question scale-transition">OK Gauthier, quelle est ta motivation pour rejoindre Google ? </div>
+      	<br>
+      </h5>
+    </blockquote>
+	</div>
+  <a class="btn-floating btn-small waves-effect waves-light yellow next"><i class="material-icons">navigate_next</i></a>
+</div>
+
+
+	<div class="secondary-container">
+    <%= audio_tag "output0.mp3", class: "audio-play" %>
+    <%= audio_tag "output1.mp3", class: "audio-play" %>
+    <%= audio_tag "output2.mp3", class: "audio-play" %>
+		<a class="btn-floating btn-large waves-effect waves-light red pulse audioButton"><i class="material-icons">settings_voice</i></a>
+    <div class="speaking">
+      <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+	</div>
+	
+
+
+
+</main>
+
+ <footer class="page-footer green">
+          <div class="footer-copyright green">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+ </footer>
+<script>
+$(".speaking").hide()
+var question = 0;
+var playing = false;
+
+function actualizeCurrentQuestion() {
+  switch (question) {
+  case 0:
+    $('.current-question').text('OK Gauthier, quelle est ta motivation pour rejoindre Google ?           ');
+    break;
+  case 1:
+    $('.current-question').text('OK Gauthier, pourquoi postuler à ce poste ?          ');
+    break;
+  case 2:
+    $('.current-question').text('OK Gauthier, pourquoi toi ?        ');
+    break;
+  default:
+}
+};
+
+$(".previous").on("click", function() {
+  if (question > 0) {
+    question -= 1;
+    $(".next").removeClass("disabled")
+  };
+  if(question == 0){
+    $(".previous").toggleClass("disabled");
+  };
+  actualizeCurrentQuestion()
+});
+
+$(".next").on("click", function() {
+  if (question < 2) {
+    question += 1
+    $(".previous").removeClass("disabled")
+  };
+  if(question == 2){
+    $(".next").toggleClass("disabled");
+  };
+  actualizeCurrentQuestion()
+});
+
+
+$(".audioButton").on("click", function() {
+  $(".audio-play")[question].currentTime = 0;
+  return $(".audio-play")[question].play();
+});
+
+$('.audio-play').on('playing', function() {
+   playing = true;
+   console.log("playing = true")
+   $(".audioButton").hide()
+   $(".speaking").show()
+});
+$('.audio-play').on('ended', function() {
+   playing = false;
+   console.log("playing = false")
+   $(".audioButton").show()
+   $(".speaking").hide()
+});
+$('.speaking').on("click", function() {
+   playing = false;
+   console.log("playing = false")
+   $(".audio-play")[question].pause()
+   $(".audio-play")[question].currentTime = 0;
+   $(".audioButton").show()
+   $(".speaking").hide()
+});
+</script>
