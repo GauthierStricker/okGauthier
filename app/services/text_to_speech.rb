@@ -1,6 +1,5 @@
 require 'google/apis/texttospeech_v1beta1'
 require 'media-magic'
-require 'pry'
 
 include MediaMagic::Operations
 
