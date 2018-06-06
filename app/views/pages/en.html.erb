@@ -4,16 +4,16 @@
     <li><%= image_tag "ios_google_icon.png", class: "logo" %></li>
   </ul>
   <ul class="right">
-    <li><a href="#">FR</a></li>
+    <li><a href="../">FR</a></li>
     <li><a href="en.html">EN</a></li>
     <li><%= image_tag "profil.png", class: "avatar" %></li>
   </ul>
-  <div class="center">Projet expérimental de candidature chez Google</div>
+  <div class="center">Experimental Project for Job Application at Google</div>
 </nav>
 </header>
 <main>
 <div class="secondary-container">
-  <h3 class="product-sans">À votre service.<br>Découvrez ma candidature.</h3>
+  <h3 class="product-sans">Built for recruiter fun.<br>Meet my Job Application.</h3>
 </div>
 <div class="secondary-container">
   <a class="btn-floating btn-small waves-effect waves-light yellow previous disabled"><i class="material-icons">navigate_before</i></a>
@@ -22,7 +22,7 @@
       <h5>
       	<i class="material-icons">format_quote</i>
       	<br>
-      	<div class="current-question scale-transition">OK Gauthier, qui es-tu ? </div>
+      	<div class="current-question scale-transition">OK Gauthier, who are you ? </div>
       	<br>
       </h5>
     </blockquote>
@@ -32,14 +32,14 @@
 
 
 	<div class="secondary-container">
-    <%= audio_tag "output0-fr.mp3", class: "audio-play" %>
-    <%= audio_tag "output1-fr.mp3", class: "audio-play" %>
-    <%= audio_tag "output2-fr.mp3", class: "audio-play" %>
-    <%= audio_tag "output3-fr.mp3", class: "audio-play" %>
-    <%= audio_tag "output4-fr.mp3", class: "audio-play" %>
-    <%= audio_tag "output5-fr.mp3", class: "audio-play" %>
-    <%= audio_tag "output6-fr.mp3", class: "audio-play" %>
-    <%= audio_tag "output7-fr.mp3", class: "audio-play" %>
+    <%= audio_tag "output0-en.mp3", class: "audio-play" %>
+    <%= audio_tag "output1-en.mp3", class: "audio-play" %>
+    <%= audio_tag "output2-en.mp3", class: "audio-play" %>
+    <%= audio_tag "output3-en.mp3", class: "audio-play" %>
+    <%= audio_tag "output4-en.mp3", class: "audio-play" %>
+    <%= audio_tag "output5-en.mp3", class: "audio-play" %>
+    <%= audio_tag "output6-en.mp3", class: "audio-play" %>
+    <%= audio_tag "output7-en.mp3", class: "audio-play" %>
 		<a class="btn-floating btn-large waves-effect waves-light red pulse audioButton"><i class="material-icons">settings_voice</i></a>
     <div class="speaking">
       <div class="preloader-wrapper big active">
@@ -94,7 +94,7 @@
  <footer class="page-footer green">
           <div class="footer-copyright green">
             <div class="container">
-            Juin, 2018 - MVP | Gauthier Stricker
+            June, 2018 - MVP | Gauthier Stricker
             <a class="grey-text text-lighten-4 right" href="https://www.linkedin.com/in/gauthierstricker/">|  Linkedin  </a>
             <a class="grey-text text-lighten-4 right" href="cv_gauthier_stricker.pdf/">  CV  |</a>
             </div>
@@ -108,28 +108,28 @@ var playing = false;
 function actualizeCurrentQuestion() {
   switch (question) {
   case 0:
-    $('.current-question').text('OK Gauthier, qui es-tu ?');
+    $('.current-question').text('OK Gauthier, who are you ? ');
     break;
   case 1:
-    $('.current-question').text('OK Gauthier, comment fais-tu pour me parler ?');
+    $('.current-question').text('OK Gauthier, how can you speak ?');
     break;
   case 2:
-    $('.current-question').text('OK Gauthier, pourquoi me contacter ?');
+    $('.current-question').text('OK Gauthier, why did you contact me ?');
     break;
   case 3:
-    $('.current-question').text('OK Gauthier, pourquoi postuler chez Google ?');
+    $('.current-question').text('OK Gauthier, why do you apply for a job at Google ?');
     break;
   case 4:
-    $('.current-question').text('OK Gauthier, pourquoi postuler à ce poste en particulier ?');
+    $('.current-question').text('OK Gauthier, why do you apply for this specific position ?');
     break;
   case 5:
-    $('.current-question').text("OK Gauthier, que penses-tu de l'avenir du conversationnel ?");
+    $('.current-question').text('Ok Gauthier, what do you think of the future of conversational interfaces ?');
     break;
   case 6:
-    $('.current-question').text("OK Gauthier, qu'attends-tu le plus comme fonctionnalité dans Google Home ?");
+    $('.current-question').text('Ok Gauthier, which Google Home features you would like to see in the next weeks ?');
     break;
   case 7:
-    $('.current-question').text('OK Gauthier, serais-tu intéressé pour un autre poste chez Google si le poste ne convient pas ?');
+    $('.current-question').text('OK Gauthier, could you be interested in another job offer at Google ?');
     break;
   default:
 }

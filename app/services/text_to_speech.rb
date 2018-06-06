@@ -1,6 +1,6 @@
 require 'google/apis/texttospeech_v1beta1'
 require 'media-magic'
-
+require 'pry'
 
 include MediaMagic::Operations
 
@@ -16,11 +16,11 @@ class GoogleTextToSpeechService
   def call(text, filename)
    	request = {
 			 "input": {
-			  "text": text,
+			  "text": "The answer is hidden in your question",
 			 },
 			 "voice": {
-			  "languageCode": "fr-FR",
-			  "name": "fr-FR-Standard-D",
+			  "languageCode": "en-US",
+			  "name": "en-US-Wavenet-B",
 			  "ssmlGender": "MALE"
 			 },
 			 "audioConfig": {
@@ -34,3 +34,6 @@ class GoogleTextToSpeechService
 	end
   end
 end
+
+a = GoogleTextToSpeechService.new
+a.call(1,"output7-en")
