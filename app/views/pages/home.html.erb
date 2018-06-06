@@ -136,27 +136,30 @@ function actualizeCurrentQuestion() {
 };
 
 $(".previous").on("click", function() {
-  if (question > 0) {
-    question -= 1;
-    $(".next").removeClass("disabled")
-  };
-  if(question == 0){
-    $(".previous").toggleClass("disabled");
-  };
+  if (playing == false) {
+    if (question > 0) {
+      question -= 1;
+      $(".next").removeClass("disabled")
+    };
+    if(question == 0){
+      $(".previous").toggleClass("disabled");
+    };
   actualizeCurrentQuestion()
+  };
 });
 
 $(".next").on("click", function() {
-  if (question < 7) {
-    question += 1
-    $(".previous").removeClass("disabled")
-  };
-  if(question == 7){
-    $(".next").toggleClass("disabled");
-  };
-  actualizeCurrentQuestion()
+  if (playing == false) {
+    if (question < 7) {
+      question += 1
+      $(".previous").removeClass("disabled")
+    };
+    if(question == 7){
+      $(".next").toggleClass("disabled");
+    };
+    actualizeCurrentQuestion()
+  }
 });
-
 
 $(".audioButton").on("click", function() {
   $(".audio-play")[question].currentTime = 0;
@@ -168,12 +171,16 @@ $('.audio-play').on('playing', function() {
    console.log("playing = true")
    $(".audioButton").hide()
    $(".speaking").show()
+   $(".previous").toggleClass("disabled")
+   $(".next").toggleClass("disabled")
 });
 $('.audio-play').on('ended', function() {
    playing = false;
    console.log("playing = false")
    $(".audioButton").show()
    $(".speaking").hide()
+   $(".previous").removeClass("disabled")
+   $(".next").removeClass("disabled")
 });
 $('.speaking').on("click", function() {
    playing = false;
@@ -182,5 +189,7 @@ $('.speaking').on("click", function() {
    $(".audio-play")[question].currentTime = 0;
    $(".audioButton").show()
    $(".speaking").hide()
+   $(".previous").removeClass("disabled")
+   $(".next").removeClass("disabled")
 });
 </script>

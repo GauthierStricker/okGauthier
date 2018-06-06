@@ -15,11 +15,13 @@ class GoogleTextToSpeechService
   def call(text, filename)
    	request = {
 			 "input": {
-			  "text": "The answer is hidden in your question",
+			  "text": "Je vous ai transmis mon CV, que vous pouvez retrouver dans le bas de page. Au delà des qualifications marketings exigées pour le poste et que je pense posséder, j’ai eu l’occasion de créer une startup sur le marché des chatbotes, et d’avoir le lead sur le produit. Cela m’a permis d’être fortement sensibilisé aux interfaces conversationnelles sur plusieurs aspects.
+L’U X et les cas d'usage.. La technique derrière le produit.. Les bénéfices pour les utilisateurs.. Les limites de mise en application.. J'ai aussi pu analyser en profondeur le marché français et américain des assistants virtuels.
+Enfin, je suis un early-adoptheure de la 1ère heure: J’ai brisé le coeur d’Alexa en août 2017. Depuis, tout les matins, mes premiers mots sont les mêmes. OK Google, stop le réveil.",
 			 },
 			 "voice": {
-			  "languageCode": "en-US",
-			  "name": "en-US-Wavenet-B",
+			  "languageCode": "fr-FR",
+			  "name": "fr-FR-Standard-D",
 			  "ssmlGender": "MALE"
 			 },
 			 "audioConfig": {

@@ -126,7 +126,7 @@ function actualizeCurrentQuestion() {
     $('.current-question').text('Ok Gauthier, what do you think of the future of conversational interfaces ?');
     break;
   case 6:
-    $('.current-question').text('Ok Gauthier, which Google Home features you would like to see in the next weeks ?');
+    $('.current-question').text('Ok Gauthier, which Google Home features you would like to see in the next months ?');
     break;
   case 7:
     $('.current-question').text('OK Gauthier, could you be interested in another job offer at Google ?');
@@ -136,25 +136,29 @@ function actualizeCurrentQuestion() {
 };
 
 $(".previous").on("click", function() {
-  if (question > 0) {
-    question -= 1;
-    $(".next").removeClass("disabled")
-  };
-  if(question == 0){
-    $(".previous").toggleClass("disabled");
-  };
+  if (playing == false) {
+    if (question > 0) {
+      question -= 1;
+      $(".next").removeClass("disabled")
+    };
+    if(question == 0){
+      $(".previous").toggleClass("disabled");
+    };
   actualizeCurrentQuestion()
+  };
 });
 
 $(".next").on("click", function() {
-  if (question < 7) {
-    question += 1
-    $(".previous").removeClass("disabled")
-  };
-  if(question == 7){
-    $(".next").toggleClass("disabled");
-  };
-  actualizeCurrentQuestion()
+  if (playing == false) {
+    if (question < 7) {
+      question += 1
+      $(".previous").removeClass("disabled")
+    };
+    if(question == 7){
+      $(".next").toggleClass("disabled");
+    };
+    actualizeCurrentQuestion()
+  }
 });
 
 
