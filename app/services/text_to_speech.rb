@@ -33,6 +33,3 @@ class GoogleTextToSpeechService
 	end
   end
 end
-
-a = GoogleTextToSpeechService.new
-a.call(1,"output7-en")
