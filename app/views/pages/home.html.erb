@@ -171,16 +171,12 @@ $('.audio-play').on('playing', function() {
    console.log("playing = true")
    $(".audioButton").hide()
    $(".speaking").show()
-   $(".previous").toggleClass("disabled")
-   $(".next").toggleClass("disabled")
 });
 $('.audio-play').on('ended', function() {
    playing = false;
    console.log("playing = false")
    $(".audioButton").show()
    $(".speaking").hide()
-   $(".previous").removeClass("disabled")
-   $(".next").removeClass("disabled")
 });
 $('.speaking').on("click", function() {
    playing = false;
@@ -189,7 +185,5 @@ $('.speaking').on("click", function() {
    $(".audio-play")[question].currentTime = 0;
    $(".audioButton").show()
    $(".speaking").hide()
-   $(".previous").removeClass("disabled")
-   $(".next").removeClass("disabled")
 });
 </script>
